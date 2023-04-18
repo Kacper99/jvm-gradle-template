@@ -1,5 +1,6 @@
 plugins {
     `java-library`
+    id("conventions")
     id("com.diffplug.spotless")
 }
 
@@ -21,5 +22,11 @@ spotless {
         importOrder()
 
         palantirJavaFormat()
+    }
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(19))
     }
 }
