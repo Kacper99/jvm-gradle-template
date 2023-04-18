@@ -8,15 +8,15 @@ import org.junit.jupiter.api.Test;
 
 class HelloWorldControllerTest {
 
+    private final HelloWorldController helloWorldController = new HelloWorldController(new HelloService());
+
     @Test
     void shouldReturnHelloWorld() {
-        HelloWorldController helloWorldController = new HelloWorldController(new HelloService());
         assertThat(helloWorldController.helloWorld()).isEqualTo("Hello World!");
     }
 
     @Test
     void shouldReturnHelloName() {
-        HelloWorldController helloWorldController = new HelloWorldController(new HelloService());
         assertThat(helloWorldController.helloName(new HelloNameRequest("John"))).isEqualTo("Hello John!");
     }
 }
