@@ -1,3 +1,6 @@
+/**
+ * Conventional plugin for dealing with spring and its dependencies
+ */
 plugins {
     `java-library`
     id("io.spring.dependency-management")

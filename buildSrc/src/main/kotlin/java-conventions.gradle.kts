@@ -1,6 +1,13 @@
+/**
+ * Conventions to be used across all Java projects, irrespective of frameworks.
+ *
+ * assertJ should always be used for assertions
+ *
+ * Spotless check will run as part of the build and fail on formatting violations
+ */
 plugins {
     `java-library`
-    id("conventions")
+    id("versioning")
     id("com.diffplug.spotless")
 }
 
