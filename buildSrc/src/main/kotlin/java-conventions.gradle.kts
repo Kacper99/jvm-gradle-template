@@ -7,6 +7,14 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    testImplementation("org.assertj:assertj-core:3.24.2")
+}
+
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
+
 spotless {
     java {
         removeUnusedImports()
