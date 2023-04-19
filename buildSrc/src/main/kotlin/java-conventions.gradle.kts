@@ -1,3 +1,5 @@
+import gradle.kotlin.dsl.accessors._7b5b8d69360df55b8c1e9ea17171c344.testImplementation
+
 /**
  * Conventions to be used across all Java projects, irrespective of frameworks.
  *
@@ -17,6 +19,7 @@ repositories {
 
 dependencies {
     testImplementation("org.assertj:assertj-core:3.24.2")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 }
 
 tasks.withType<Test> {
