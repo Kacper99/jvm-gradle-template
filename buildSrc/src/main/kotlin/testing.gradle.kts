@@ -39,3 +39,13 @@ testing {
 tasks.named("check") {
     dependsOn(testing.suites.named("integrationTest"))
 }
+
+tasks.jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = "0.1".toBigDecimal() // TODO: Change this 
+            }
+        }
+    }
+}

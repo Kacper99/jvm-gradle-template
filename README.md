@@ -11,3 +11,4 @@ you can build a multi-module springboot project.
 - Change the group in [versioning.gradle.kts](buildSrc/src/main/kotlin/versioning.gradle.kts).
 - Rename the project name in [settings.gradle.kts](settings.gradle.kts).
 - Delete all the Hello World related classes.
+- Update your jacoco configuration in [testing.gradle.kts](buildSrc/src/main/kotlin/testing.gradle.kts).
