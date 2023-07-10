@@ -1,6 +1,1 @@
-plugins {
-    `java-spring-library`
-    `kotlin-conventions`
-}
-
-
+plugins { `library-conventions` }

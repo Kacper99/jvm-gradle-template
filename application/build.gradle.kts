@@ -1,7 +1,3 @@
-plugins {
-    `java-spring-application`
-}
+plugins { `java-spring-application` }
 
-dependencies {
-    implementation(project(":library"))
-}
+dependencies { implementation(project(":library")) }

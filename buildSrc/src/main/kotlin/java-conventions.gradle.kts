@@ -1,5 +1,3 @@
-import gradle.kotlin.dsl.accessors._7b5b8d69360df55b8c1e9ea17171c344.testImplementation
-
 /**
  * Conventions to be used across all Java projects, irrespective of frameworks.
  *
@@ -10,7 +8,8 @@ import gradle.kotlin.dsl.accessors._7b5b8d69360df55b8c1e9ea17171c344.testImpleme
 plugins {
     `java-library`
     id("versioning")
-    id("com.diffplug.spotless")
+    id("spotless")
+    id("testing")
 }
 
 repositories {
@@ -19,20 +18,6 @@ repositories {
 
 dependencies {
     testImplementation("org.assertj:assertj-core:3.24.2")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
-}
-
-tasks.withType<Test> {
-    useJUnitPlatform()
-}
-
-spotless {
-    java {
-        removeUnusedImports()
-        importOrder()
-
-        palantirJavaFormat()
-    }
 }
 
 java {

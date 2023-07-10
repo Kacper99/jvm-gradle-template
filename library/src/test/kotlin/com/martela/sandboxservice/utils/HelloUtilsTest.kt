@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Test
 
 class HelloUtilsTest {
 
-        @Test
-        fun hello() {
-            val helloUtils = HelloUtils()
-            assertEquals("Hello World!", helloUtils.hello())
-        }
+    @Test
+    fun hello() {
+        val helloUtils = HelloUtils()
+        assertEquals("Hello World!", helloUtils.hello())
+    }
 }
