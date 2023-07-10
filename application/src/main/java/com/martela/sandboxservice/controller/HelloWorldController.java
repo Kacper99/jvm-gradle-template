@@ -16,8 +16,8 @@ public class HelloWorldController {
     }
 
     @GetMapping("/hello-world")
-    public String helloWorld() {
-        return helloService.helloWorld();
+    public HelloWorldResponse helloWorld() {
+        return new HelloWorldResponse(helloService.helloWorld());
     }
 
     @PostMapping("/hello")
@@ -26,4 +26,6 @@ public class HelloWorldController {
     }
 
     record HelloNameRequest(String name) {}
+
+    record HelloWorldResponse(String message) {}
 }

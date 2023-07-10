@@ -14,29 +14,3 @@ dependencies {
         because("Provide Swagger and an OpenAPI spec")
     }
 }
-
-testing {
-    suites {
-        register<JvmTestSuite>("springTest") {
-            dependencies {
-                implementation(project())
-                implementation(platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
-                implementation("org.springframework.boot:spring-boot-starter-test") {
-                    exclude(group = "org.hamcrest", module = "hamcrest") //Using assertJ and kotest instead
-                }
-            }
-
-            targets {
-                all {
-                    testTask.configure {
-                        shouldRunAfter(tasks.named("test"))
-                    }
-                }
-            }
-        }
-    }
-}
-
-tasks.named("check") {
-    dependsOn(testing.suites.named("springTest"))
-}

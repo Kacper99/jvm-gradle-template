@@ -12,7 +12,7 @@ class HelloWorldControllerTest {
 
     @Test
     void shouldReturnHelloWorld() {
-        assertThat(helloWorldController.helloWorld()).isEqualTo("Hello World!");
+        assertThat(helloWorldController.helloWorld()).isEqualTo(new HelloWorldResponse("Hello World!"));
     }
 
     @Test
