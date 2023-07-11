@@ -22,7 +22,7 @@ testing {
         register<JvmTestSuite>("integrationTest") {
             dependencies {
                 implementation(project())
-                implementation("io.kotest:kotest-assertions-core:5.6.1")
+                implementation(libs.kotest)
             }
 
             targets {
