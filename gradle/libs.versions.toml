@@ -1,11 +1,11 @@
 [versions]
-spotless = "6.19.0"
+spotless = "6.20.0"
 kotlin = "1.9.0"
 
 assertj = "3.24.2"
 kotest = "5.6.2"
 
-spring-dependency-management-plugin = "1.1.1"
+spring-dependency-management-plugin = "1.1.2"
 springboot = "3.1.2"
 springdoc = "2.1.0"
 
