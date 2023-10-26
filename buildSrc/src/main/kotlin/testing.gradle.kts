@@ -2,6 +2,7 @@ plugins {
     java
     `jvm-test-suite`
     jacoco
+    `jacoco-report-aggregation`
 }
 
 testing {
@@ -9,6 +10,10 @@ testing {
         configureEach {
             if (this is JvmTestSuite) {
                 useJUnitJupiter()
+                dependencies {
+                    implementation(libs.kotest)
+                    implementation(libs.kotest.arrow) // https://kotest.io/docs/assertions/arrow.html
+                }
                 targets {
                     all {
                         testTask.configure{
@@ -22,7 +27,6 @@ testing {
         register<JvmTestSuite>("integrationTest") {
             dependencies {
                 implementation(project())
-                implementation(libs.kotest)
             }
 
             targets {
@@ -44,7 +48,28 @@ tasks.jacocoTestCoverageVerification {
     violationRules {
         rule {
             limit {
-                minimum = "0.1".toBigDecimal() // TODO: Change this 
+                minimum = "0.8".toBigDecimal() // TODO: Change this
+            }
+        }
+    }
+}
+
+tasks.register<JacocoCoverageVerification>("projectJacocoReportVerification") {
+    executionData(fileTree(project.rootDir).include("**/jacoco/*.exec"))
+    dependsOn(project.tasks.withType(JacocoReport::class))
+}
+
+reporting {
+    reports {
+        val fullCodeCoverageReport by creating(JacocoCoverageReport::class) {
+            testType.set("full")
+            reportTask.configure {
+                executionData(fileTree(project.rootDir).include("**/jacoco/*.exec"))
+                dependsOn(project.tasks.withType(JacocoReport::class).filter { it != this })
+                reports {
+                    html.required.set(true)
+                    xml.required.set(false)
+                }
             }
         }
     }

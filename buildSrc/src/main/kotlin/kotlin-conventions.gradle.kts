@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     kotlin("jvm")
     id("versioning")
@@ -11,7 +13,13 @@ repositories {
 
 dependencies {
     implementation(platform(libs.kotlin.bom))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib")
+    implementation(libs.bundles.arrow)
+}
 
-    testImplementation(libs.kotest)
+tasks.withType<KotlinCompile> {
+    kotlinOptions {
+        freeCompilerArgs += "-Xjsr305=strict"
+        jvmTarget = "19"
+    }
 }

@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     id("com.diffplug.spotless")
 }
@@ -20,4 +22,8 @@ spotless {
         target("*.gradle.kts")
         ktfmt("0.43").dropboxStyle()
     }
+}
+
+tasks.withType(AbstractCompile::class) {
+    dependsOn(tasks.spotlessCheck)
 }
