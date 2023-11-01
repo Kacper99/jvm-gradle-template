@@ -1,4 +1,4 @@
-plugins { `java-spring-application` }
+plugins { `spring-application` }
 
 dependencies {
     implementation(project(":library"))
