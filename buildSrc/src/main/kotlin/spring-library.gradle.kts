@@ -5,7 +5,6 @@ plugins {
     id("java-conventions")
     id("kotlin-conventions")
     id("spring")
-    id("org.springframework.boot")
     kotlin("plugin.spring")
 }
 

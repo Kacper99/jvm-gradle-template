@@ -4,7 +4,6 @@
 plugins {
     java
     `jvm-test-suite`
-    id("org.springframework.boot")
 }
 
 dependencies {
