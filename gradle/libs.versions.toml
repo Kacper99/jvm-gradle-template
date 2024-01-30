@@ -2,7 +2,7 @@
 spotless = "6.24.0"
 kotlin = "1.9.22"
 
-assertj = "3.25.1"
+assertj = "3.25.2"
 kotest = "5.8.0"
 kotest-arrow = "1.4.0"
 
