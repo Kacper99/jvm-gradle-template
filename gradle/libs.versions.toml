@@ -1,6 +1,6 @@
 [versions]
 spotless = "6.25.0"
-kotlin = "1.9.22"
+kotlin = "1.9.23"
 
 assertj = "3.25.3"
 kotest = "5.8.0"
