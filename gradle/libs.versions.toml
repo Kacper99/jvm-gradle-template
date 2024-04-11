@@ -12,7 +12,7 @@ springdoc = "2.3.0"
 
 flyway = "9.22.3"
 jooq = "8.2.1"
-postgres = "42.7.2"
+postgres = "42.7.3"
 testcontainers = "1.19.7"
 arrow = "1.2.3"
 
