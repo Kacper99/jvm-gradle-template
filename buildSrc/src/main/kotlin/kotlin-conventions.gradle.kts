@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -17,9 +19,9 @@ dependencies {
     implementation(libs.bundles.arrow)
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        freeCompilerArgs += "-Xjsr305=strict"
-        jvmTarget = JAVA_VERSION.toString()
+kotlin {
+    compilerOptions {
+        jvmToolchain(JAVA_VERSION.asInt())
+        apiVersion.set(KotlinVersion.KOTLIN_2_0)
     }
 }
