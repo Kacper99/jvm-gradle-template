@@ -6,7 +6,7 @@ assertj = "3.26.0"
 kotest = "5.9.1"
 kotest-arrow = "1.4.0"
 
-spring-dependency-management-plugin = "1.1.5"
+spring-dependency-management-plugin = "1.1.7"
 springboot = "3.3.4"
 springdoc = "2.5.0"
 
