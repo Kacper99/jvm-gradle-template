@@ -14,7 +14,7 @@ flyway = "9.22.3"
 jooq = "8.2.1"
 postgres = "42.7.3"
 testcontainers = "1.21.3"
-arrow = "1.2.4"
+arrow = "2.1.2"
 
 [libraries]
 spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", version.ref = "spotless" }
